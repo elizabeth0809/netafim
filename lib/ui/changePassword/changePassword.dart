@@ -28,7 +28,7 @@ class ChangePasswordPage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pushNamed(context, 'login');
                   },
                   child: Icon(Icons.arrow_back, color: Colors.white),
                   style: ElevatedButton.styleFrom(

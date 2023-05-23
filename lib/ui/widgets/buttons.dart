@@ -18,33 +18,43 @@ class buttonLogin extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          MaterialButton(
+          FractionallySizedBox(
+            widthFactor: 0.5, // Ajusta el factor según tus necesidades
+            child: MaterialButton(
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
+                borderRadius: BorderRadius.circular(10),
+              ),
               disabledColor: Colors.white,
               elevation: 0,
               color: Colors.blue,
               onPressed: onPressed,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                //padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                 child: Text(this.text, style: TextStyle(color: Colors.white)),
-              )),
+              ),
+            ),
+          ),
           SizedBox(height: 10),
-          MaterialButton(
+          FractionallySizedBox(
+            widthFactor: 0.5, // Ajusta el factor según tus necesidades
+            child: MaterialButton(
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  side: BorderSide(color: Colors.blue, width: 1)),
+                borderRadius: BorderRadius.circular(10),
+                side: BorderSide(color: Colors.blue, width: 1),
+              ),
               disabledColor: Colors.blue,
               elevation: 0,
               color: Colors.white,
               onPressed: onPressed2,
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
+                //padding: EdgeInsets.symmetric(horizontal: 70, vertical: 15),
                 child: Text(
                   this.text2,
                   style: TextStyle(color: Colors.blue),
                 ),
-              ))
+              ),
+            ),
+          ),
         ],
       ),
     );
