@@ -16,21 +16,26 @@ class CustomInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(top: 5, left: 5, bottom: 5, right: 20),
         margin: EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: Colors.blue, width: 1.0)),
         child: TextFormField(
           controller: this.textController,
           autocorrect: false,
           keyboardType: this.keyboardType,
           obscureText: this.isPassword,
           decoration: InputDecoration(
-              focusedBorder: InputBorder.none,
-              border: InputBorder.none,
-              hintText: this.placeholder),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: Colors.blue, width: 2.0)),
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: BorderSide(color: Colors.blue, width: 2.0)),
+            floatingLabelBehavior: FloatingLabelBehavior.always,
+            labelText: this.placeholder,
+            labelStyle: TextStyle(
+                color: Colors.blue,
+                fontSize: 22.0,
+                fontWeight: FontWeight.normal),
+          ),
         ));
   }
 }

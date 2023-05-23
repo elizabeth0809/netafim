@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netafim/ui/widgets/buttons.dart';
 import 'package:netafim/ui/widgets/customInput.dart';
 import 'package:netafim/ui/widgets/logo.dart';
 
@@ -16,12 +17,20 @@ class LoginPage extends StatelessWidget {
                 image: DecorationImage(
                     image: AssetImage('assets/fondo.png'), fit: BoxFit.cover)),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Logo(),
-                Text('Inicia sesion para registrar clientes',
-                    style: TextStyle(color: Colors.black, fontSize: 20)),
+                SizedBox(height: 10),
+                Container(
+                  child: Center(
+                    child: Text('Inicia sesion para registrar clientes',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 25,
+                            fontWeight: FontWeight.w300)),
+                  ),
+                ),
                 Form(),
                 TextButton(
                   onPressed: () =>
@@ -32,37 +41,19 @@ class LoginPage extends StatelessWidget {
                       shape: MaterialStateProperty.all(StadiumBorder())),
                   child: Text(
                     'Olvide mi contraseña',
-                    style: TextStyle(fontSize: 15, color: Colors.black54),
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                 ),
-                SizedBox(height: 10),
-                MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    disabledColor: Colors.white,
-                    elevation: 0,
-                    color: Colors.blue,
-                    onPressed: () {},
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                      child: Text('Iniciar sesión'),
-                    )),
-                SizedBox(height: 10),
-                MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    disabledColor: Colors.blue,
-                    elevation: 0,
-                    color: Colors.white,
-                    onPressed: () {},
-                    child: Container(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 70, vertical: 15),
-                      child: Text(
-                        'Registro',
-                      ),
-                    ))
+                buttonLogin(
+                  onPressed: () {},
+                  onPressed2: () {},
+                  text: 'Iniciar sesión',
+                  text2: 'Registro',
+                ),
               ],
             ),
           ),
@@ -92,7 +83,7 @@ class _FormState extends State<Form> {
       child: Column(
         children: <Widget>[
           CustomInput(
-            placeholder: 'Correo',
+            placeholder: 'Correo electrónico',
             keyboardType: TextInputType.emailAddress,
             textController: emailCtrl,
           ),
