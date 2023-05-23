@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                 Form(),
                 TextButton(
                   onPressed: () =>
-                      Navigator.pushReplacementNamed(context, 'register'),
+                      Navigator.pushReplacementNamed(context, 'changepassword'),
                   style: ButtonStyle(
                       overlayColor: MaterialStateProperty.all(
                           Colors.indigo.withOpacity(0.1)),
@@ -50,7 +50,9 @@ class LoginPage extends StatelessWidget {
                 ),
                 buttonLogin(
                   onPressed: () {},
-                  onPressed2: () {},
+                  onPressed2: () {
+                    Navigator.pushNamed(context, 'register');
+                  },
                   text: 'Iniciar sesión',
                   text2: 'Registro',
                 ),

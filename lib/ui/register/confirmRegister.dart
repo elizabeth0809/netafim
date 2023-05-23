@@ -37,7 +37,9 @@ class ConfirmRegister extends StatelessWidget {
               onPressed: () {},
               text: 'Ir al correo electrónico',
               text2: 'Volver al Inicio',
-              onPressed2: () {},
+              onPressed2: () {
+                Navigator.pushNamed(context, 'login');
+              },
             )
           ],
         ),

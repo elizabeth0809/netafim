@@ -27,7 +27,9 @@ class ChangePasswordPage extends StatelessWidget {
                 child: Row(
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   child: Icon(Icons.arrow_back, color: Colors.white),
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),

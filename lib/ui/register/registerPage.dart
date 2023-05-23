@@ -27,7 +27,9 @@ class RegisterPage extends StatelessWidget {
                 child: Row(
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   child: Icon(Icons.arrow_back, color: Colors.white),
                   style: ElevatedButton.styleFrom(
                     shape: CircleBorder(),
@@ -47,7 +49,9 @@ class RegisterPage extends StatelessWidget {
             )),
             Form(),
             ButtonBlue(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'confirmregister');
+              },
               text: 'Registrar',
             )
           ],
