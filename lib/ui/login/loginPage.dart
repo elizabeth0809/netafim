@@ -49,7 +49,9 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 buttonLogin(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'homepage');
+                  },
                   onPressed2: () {
                     Navigator.pushNamed(context, 'register');
                   },

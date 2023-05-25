@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netafim/ui/changePassword/changePassword.dart';
+import 'package:netafim/ui/home/homePage.dart';
 import 'package:netafim/ui/login/loginPage.dart';
 import 'package:netafim/ui/register/confirmRegister.dart';
 import 'package:netafim/ui/register/registerPage.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         'register': (_) => RegisterPage(),
         'resetPassword': (_) => ResetPassword(),
         'confirmregister': (_) => ConfirmRegister(),
-        'changepassword': (_) => ChangePasswordPage()
+        'changepassword': (_) => ChangePasswordPage(),
+        'homepage': (_) => HomePage(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
