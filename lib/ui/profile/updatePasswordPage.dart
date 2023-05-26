@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:netafim/ui/widgets/buttonWhite.dart';
+import 'package:netafim/ui/widgets/buttons.dart';
 import 'package:netafim/ui/widgets/customInput.dart';
 import 'package:netafim/ui/widgets/logoBlue.dart';
 
-class ProfileClientsPage extends StatelessWidget {
-  const ProfileClientsPage({super.key});
+class UpdatePasswordPage extends StatelessWidget {
+  const UpdatePasswordPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class ProfileClientsPage extends StatelessWidget {
                     backgroundColor: Colors.blue, // <-- Button color
                   ),
                 ),
-                Text('Perfil',
+                Text('Cambiar contraseña',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.black,
@@ -46,9 +47,42 @@ class ProfileClientsPage extends StatelessWidget {
             )),
             Form(),
             SizedBox(height: 10),
-            ButtonWhite(
-              text: 'Cerrar sesión',
-              onPressed: () {},
+            buttonLogin(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: ((context) => AlertDialog(
+                          title: Center(
+                              child: Text(
+                            'Se ha cambiado exitosamente su contraseña',
+                            textAlign: TextAlign.center,
+                          )),
+                          actions: <Widget>[
+                            Center(
+                              child: MaterialButton(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                disabledColor: Colors.white,
+                                elevation: 0,
+                                color: Colors.blue,
+                                child: Container(
+                                  child: Text(
+                                    'aceptar',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                onPressed: () {},
+                              ),
+                            ),
+                          ],
+                        )));
+              },
+              onPressed2: () {
+                Navigator.pop(context);
+              },
+              text: 'Cambiar contraseña',
+              text2: 'Cancelar',
             )
           ],
         ),
@@ -79,43 +113,19 @@ class _FormState extends State<Form> {
       child: Column(
         children: <Widget>[
           CustomInput(
-            placeholder: 'Nombre',
+            placeholder: 'Contraseña actual',
             keyboardType: TextInputType.name,
             textController: nameCtrl,
           ),
           CustomInput(
-            placeholder: 'Apellidos',
+            placeholder: 'Contraseña nueva',
             textController: lastNameCtrl,
           ),
           CustomInput(
-            placeholder: 'Correo electronico',
+            placeholder: 'Confirmar contraseña',
             keyboardType: TextInputType.emailAddress,
             textController: emailCtrl,
           ),
-          TextFormField(
-            autocorrect: false,
-            decoration: InputDecoration(
-              enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0)),
-              focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color: Colors.blue, width: 2.0)),
-              floatingLabelBehavior: FloatingLabelBehavior.always,
-              labelText: 'Contraseña',
-              labelStyle: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 22.0,
-                  fontWeight: FontWeight.normal),
-              suffixIcon: IconButton(
-                icon: Icon(Icons.edit),
-                color: Colors.blue,
-                onPressed: () {
-                  Navigator.pushNamed(context, 'updatePasswordPage');
-                },
-              ),
-            ),
-          )
         ],
       ),
     );
