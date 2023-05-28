@@ -12,8 +12,7 @@ class AddClientsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: SingleChildScrollView(
-          child: Container(
+      child: Container(
         height: MediaQuery.of(context).size.height * 0.8,
         decoration: BoxDecoration(
             image: DecorationImage(
@@ -47,7 +46,9 @@ class AddClientsPage extends StatelessWidget {
               ],
             )),
             ButtonBlue(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'addTarjetPage');
+              },
               text: 'Añadir tarjeta de cliente',
             ),
             Form(),
@@ -66,7 +67,7 @@ class AddClientsPage extends StatelessWidget {
             )
           ],
         ),
-      )),
+      ),
     ));
   }
 }
@@ -188,11 +189,10 @@ class _FormState extends State<Form> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Expanded(
-                    child: TextFormField(
-                        //enabled: false,
-                        ),
-                  ),
-                  SizedBox(width: 10),
+                      child: TextField(
+                    decoration: InputDecoration(hintText: '999'),
+                    autocorrect: false,
+                  )),
                   Container(
                     width: 100,
                     decoration: BoxDecoration(
@@ -203,16 +203,16 @@ class _FormState extends State<Form> {
                       value: selectedOption,
                       items: [
                         DropdownMenuItem<String>(
-                          value: 'Option 1',
-                          child: Text('Option 1'),
+                          value: 'unidad',
+                          child: Text('unidad'),
                         ),
                         DropdownMenuItem<String>(
-                          value: 'Option 2',
-                          child: Text('Option 2'),
+                          value: 'e',
+                          child: Text('e'),
                         ),
                         DropdownMenuItem<String>(
-                          value: 'Option 3',
-                          child: Text('Option 3'),
+                          value: 'a',
+                          child: Text('a'),
                         ),
                       ],
                       onChanged: (newValue) {

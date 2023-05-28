@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netafim/ui/addClientsPage/addClientsPage.dart';
+import 'package:netafim/ui/addClientsPage/addTarjetPage.dart';
 import 'package:netafim/ui/changePassword/changePassword.dart';
 import 'package:netafim/ui/home/homePage.dart';
 import 'package:netafim/ui/login/loginPage.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
         'profileClientsPage': (_) => ProfileClientsPage(),
         'readClientsPage': (_) => ReadClientsPage(),
         'addClientsPage': (_) => AddClientsPage(),
-        'updatePasswordPage': (_) => UpdatePasswordPage()
+        'updatePasswordPage': (_) => UpdatePasswordPage(),
+        'addTarjetPage': (_) => AddTarjetPage()
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,
