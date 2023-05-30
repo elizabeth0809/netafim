@@ -186,16 +186,53 @@ class _TabBarContainerState extends State<TabBarContainer>
                         ),
                       ],
                     ),
-                    Container(
-                      color: Colors.orange[100],
-                      child: ListView.builder(
-                        itemCount: 20,
-                        itemBuilder: (context, index) {
-                          return ListTile(
-                            title: Text('Cliente Archivado $index'),
-                          );
-                        },
-                      ),
+                    CustomScrollView(
+                      slivers: [
+                        SliverList(
+                          delegate: SliverChildBuilderDelegate(
+                            (context, index) {
+                              return Container(
+                                color: Colors.white,
+                                padding: EdgeInsets.all(10),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue[100],
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  child: ListTile(
+                                    leading: Icon(
+                                      Icons.person,
+                                      color: Colors.white,
+                                      size: 60,
+                                    ),
+                                    title: GestureDetector(
+                                      onTap: () {
+                                        Navigator.pushNamed(
+                                            context, 'dataClientsPage');
+                                      },
+                                      child: Text(
+                                        'Guardado $index',
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 20,
+                                        ),
+                                      ),
+                                    ),
+                                    subtitle: Text(
+                                      'Subtítulo $index',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                            childCount: 10,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
