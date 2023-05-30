@@ -6,6 +6,7 @@ import 'package:netafim/ui/home/homePage.dart';
 import 'package:netafim/ui/login/loginPage.dart';
 import 'package:netafim/ui/profile/profilePage.dart';
 import 'package:netafim/ui/profile/updatePasswordPage.dart';
+import 'package:netafim/ui/readClientes/dataClientPage.dart';
 import 'package:netafim/ui/readClientes/readClientsPage.dart';
 import 'package:netafim/ui/register/confirmRegister.dart';
 import 'package:netafim/ui/register/registerPage.dart';
@@ -34,7 +35,9 @@ class MyApp extends StatelessWidget {
         'readClientsPage': (_) => ReadClientsPage(),
         'addClientsPage': (_) => AddClientsPage(),
         'updatePasswordPage': (_) => UpdatePasswordPage(),
-        'addTarjetPage': (_) => AddTarjetPage()
+        'addTarjetPage': (_) => AddTarjetPage(),
+        'readClientsPage': (_) => ReadClientsPage(),
+        'dataClientsPage': (_) => DataClientsPage(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,

@@ -5,8 +5,8 @@ import 'package:netafim/ui/widgets/buttons.dart';
 import 'package:netafim/ui/widgets/customInput.dart';
 import 'package:netafim/ui/widgets/logoBlue.dart';
 
-class AddClientsPage extends StatelessWidget {
-  const AddClientsPage({super.key});
+class DataClientsPage extends StatelessWidget {
+  const DataClientsPage({super.key});
   final bool receiveInformation = false;
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class AddClientsPage extends StatelessWidget {
                     backgroundColor: Colors.blue, // <-- Button color
                   ),
                 ),
-                Text('Añadir cliente',
+                Text('Datos del cliente',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.black,
@@ -45,12 +45,6 @@ class AddClientsPage extends StatelessWidget {
                         fontWeight: FontWeight.bold)),
               ],
             )),
-            ButtonBlue(
-              onPressed: () {
-                Navigator.pushNamed(context, 'addTarjetPage');
-              },
-              text: 'Añadir tarjeta de cliente',
-            ),
             Form(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -60,10 +54,56 @@ class AddClientsPage extends StatelessWidget {
               ],
             ),
             buttonLogin(
-              onPressed: () {},
-              onPressed2: () {},
-              text: 'Guardar cliente',
-              text2: 'Cancelar',
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Center(
+                        child: Text(
+                          '¿Desea archivar el cliente actual?',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      actions: <Widget>[
+                        Center(
+                            child: buttonLogin(
+                          text: 'Archivar',
+                          onPressed: () {},
+                          onPressed2: () {},
+                          text2: 'Cancelar',
+                        )),
+                      ],
+                    );
+                  },
+                );
+              },
+              onPressed2: () {
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Center(
+                        child: Text(
+                          '¿Desea eliminar el cliente actual?',
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                      actions: <Widget>[
+                        Center(
+                            child: buttonLogin(
+                          text: 'archivar',
+                          onPressed: () {},
+                          onPressed2: () {},
+                          text2: 'Cancelar',
+                        )),
+                      ],
+                    );
+                  },
+                );
+              },
+              text: 'Archivar cliente',
+              text2: 'Eliminar cliente',
             )
           ],
         ),
