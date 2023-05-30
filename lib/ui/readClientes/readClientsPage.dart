@@ -39,7 +39,9 @@ class ReadClientsPage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             ButtonBlue(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'tarjetPage');
+              },
               text: 'Ver tarjetas de clientes',
             ),
             SizedBox(height: 10),
@@ -114,18 +116,28 @@ class _TabBarContainerState extends State<TabBarContainer>
                     CustomScrollView(
                       slivers: [
                         SliverToBoxAdapter(
-                          child: MaterialButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                          child: Container(
+                            color: Colors.white, // Color de fondo blanco
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: SizedBox(
+                                width:
+                                    200, // Ancho deseado para el MaterialButton
+                                child: MaterialButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
+                                  disabledColor: Colors.white,
+                                  elevation: 0,
+                                  color: Colors.blue,
+                                  child: Text(
+                                    'Descargar datos',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  onPressed: () {},
+                                ),
+                              ),
                             ),
-                            disabledColor: Colors.white,
-                            elevation: 0,
-                            color: Colors.orange,
-                            child: Text(
-                              'Descargar datos',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            onPressed: () {},
                           ),
                         ),
                         SliverList(

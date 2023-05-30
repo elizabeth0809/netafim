@@ -8,6 +8,8 @@ import 'package:netafim/ui/profile/profilePage.dart';
 import 'package:netafim/ui/profile/updatePasswordPage.dart';
 import 'package:netafim/ui/readClientes/dataClientPage.dart';
 import 'package:netafim/ui/readClientes/readClientsPage.dart';
+import 'package:netafim/ui/readClientes/tarjetIndividualPage.dart';
+import 'package:netafim/ui/readClientes/tarjetsPage.dart';
 import 'package:netafim/ui/register/confirmRegister.dart';
 import 'package:netafim/ui/register/registerPage.dart';
 
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         'addTarjetPage': (_) => AddTarjetPage(),
         'readClientsPage': (_) => ReadClientsPage(),
         'dataClientsPage': (_) => DataClientsPage(),
+        'tarjetPage': (_) => TarjetPage(),
+        'tarjetIndividualPage': (_) => TarjetIndividualPage(),
       },
       theme: ThemeData.light().copyWith(
         scaffoldBackgroundColor: Colors.white,

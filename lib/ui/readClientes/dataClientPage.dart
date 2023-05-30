@@ -92,7 +92,7 @@ class DataClientsPage extends StatelessWidget {
                       actions: <Widget>[
                         Center(
                             child: buttonLogin(
-                          text: 'archivar',
+                          text: 'Archivar',
                           onPressed: () {},
                           onPressed2: () {},
                           text2: 'Cancelar',
